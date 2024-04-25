@@ -1,240 +1,141 @@
-<!--
-#
-# Licensed to the Apache Software Foundation (ASF) under one
-# or more contributor license agreements.  See the NOTICE file
-# distributed with this work for additional information
-# regarding copyright ownership.  The ASF licenses this file
-# to you under the Apache License, Version 2.0 (the
-# "License"); you may not use this file except in compliance
-# with the License.  You may obtain a copy of the License at
-#
-# http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing,
-# software distributed under the License is distributed on an
-# "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-#  KIND, either express or implied.  See the License for the
-# specific language governing permissions and limitations
-# under the License.
-#
--->
-
-<img src="http://mynewt.apache.org/img/logo.svg" width="250" alt="Apache Mynewt">
-
-## Overview
-
+<div class="Box-sc-g0xbh4-0 bJMeLZ js-snippet-clipboard-copy-unpositioned" data-hpc="true"><article class="markdown-body entry-content container-lg" itemprop="text">
+<p dir="auto"><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/011e03b3cae5299adc7143b75910b1970ec4bfdf4199d4ad576a51db3a607ba2/687474703a2f2f6d796e6577742e6170616368652e6f72672f696d672f6c6f676f2e737667"><img src="https://camo.githubusercontent.com/011e03b3cae5299adc7143b75910b1970ec4bfdf4199d4ad576a51db3a607ba2/687474703a2f2f6d796e6577742e6170616368652e6f72672f696d672f6c6f676f2e737667" width="250" alt="阿帕奇Mynewt" data-canonical-src="http://mynewt.apache.org/img/logo.svg" style="max-width: 100%;"></a></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">概述</font></font></h2><a id="user-content-overview" class="anchor" aria-label="永久链接：概述" href="#overview"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
 <a href="https://github.com/apache/mynewt-core/actions/workflows/build_targets.yml">
-  <img src="https://github.com/apache/mynewt-core/actions/workflows/build_targets.yml/badge.svg">
-<a/>
-
+  <img src="https://github.com/apache/mynewt-core/actions/workflows/build_targets.yml/badge.svg" style="max-width: 100%;">
+</a>
 <a href="https://github.com/apache/mynewt-core/actions/workflows/build_blinky.yml">
-  <img src="https://github.com/apache/mynewt-core/actions/workflows/build_blinky.yml/badge.svg">
-<a/>
-
+  <img src="https://github.com/apache/mynewt-core/actions/workflows/build_blinky.yml/badge.svg" style="max-width: 100%;">
+</a>
 <a href="https://github.com/apache/mynewt-core/actions/workflows/newt_test_all.yml/badge.svg">
-  <img src="https://github.com/apache/mynewt-core/actions/workflows/newt_test_all.yml/badge.svg">
-<a/>
-
-<p>
-
-Apache Mynewt is an open-source operating system for tiny embedded devices.
-Its goal is to make it easy to develop applications for microcontroller
-environments where power and cost are driving factors.
-
-It currently supports the following hardware platforms:
-
-* nRF52 DK from Nordic Semiconductor (Cortex-M4)
-* RuuviTag Sensor beacon platform (Nordic nRF52832 based)
-* nRF51 DK from Nordic Semiconductor (Cortex-M0)
-* VBLUno51 from VNG IoT Lab (Nordic nRF51822 SoC based)
-* VBLUno52 from VNG IoT Lab (Nordic nRF52832 SoC based, Cortex-M4)
-* BLE Nano from RedBear (Nordic nRF51822 SoC based)
-* BLE Nano2 and Blend2 from RedBear (Nordic nRF52832 SoC based)
-* BMD-300-EVAL-ES from Rigado (Cortex-M4)
-* BMD-200 from Rigado (Cortex-M0)
-* Adafruit Feather nRF52 Pro
-* STM32F4DISCOVERY from ST Micro (Cortex-M4)
-* STM32-E407 from Olimex (Cortex-M4)
-* Arduino Zero (Cortex-M0)
-* Arduino Zero Pro (Cortex-M0)
-* Arduino M0 Pro (Cortex-M0)
-* Arduino MKR1000 (Cortex-M0)
-* Arduino Primo NRF52 (Cortex-M4)
-* NUCLEO-F401RE (Cortex-M4)
-* NUCLEO-F767ZI (Cortex-M7)
-* Discovery kit for STM32F7 Series (Cortex-M7)
-* FRDM-K64F from NXP (Cortex-M4)
-* BBC micro:bit (Nordic nrf51822; Cortex-M0)
-* SiFive HiFive1 (RISC-V Instruction Set Architecture)
-* NINA-B1 BLE module from u-blox (Cortex-M4)
-* 6LoWPAN clicker from MikroElectronika (PIC32MX470 microcontroller)
-* chipKIT Wi-FIRE (PIC32MZ microcontroller)
-* Creator Ci40 module (dual MIPS interAptiv CPU)
-* EE-02 board with Semtech Sx1276 chip from Telenor (Cortex-M4) 
-* DA1469x Pro DK from Dialog Semiconductor (Cortex-M33)
-* nRF5340 DK from Nordic Semiconductor (Cortex-M33)
-
-Apache Mynewt uses the
-[Newt](https://www.github.com/apache/mynewt-newt) build and package
-management system, which allows you to compose your OS and choose only the
-components you need.
-
-This repository contains the core packages of the Apache Mynewt OS, including:
-
-* A Pre-emptive, Real Time OS Kernel
-* A open-source Bluetooth 5.0 stack (both Host & Controller), NimBLE, that
-completely replaces the proprietary SoftDevice on Nordic chipsets.
-<span style="color:red">**NOTE** NimBLE sources were moved to separate [repository](https://github.com/apache/mynewt-nimble).</span>
-    - Support for 251 byte packet size
-    - Support for all 4 roles concurrently - Broadcaster, Observer, Peripheral and Central
-    - Support for up to 32 simultaneous connections.
-    - Legacy and SC (secure connections) SMP support (pairing and bonding).
-    - Advertising Extensions.
-* A flash filesystem, NFFS, which is designed for tiny (128KB->16MB) flashes.
-* FatFS
-* Flash Circular Buffer
-* JSON and CBOR encoding
-* Bootloader support
-* Remote Software Upgrade
-* HAL and BSP infrastructure designed to abstract microcontroller specifics
-* Shell and Console support
-* Statistics and Logging Infrastructure
-* OIC Client and Server
-
-For more information on the Mynewt OS, please visit our website [here](https://mynewt.apache.org/).
-If you'd like to get started, visit the [Quick Start Guide](http://mynewt.apache.org/quick-start/).
-
-## Browsing
-
-If you are browsing around the source tree, and want to see some of the
-major functional chunks, here are a few pointers:
-
-- kernel: Contains the core of the RTOS ([kernel/os](https://github.com/apache/mynewt-core/tree/master/kernel/os))
-
-- sys: Contains a number of helper libraries for building applications.  Including a
-console ([sys/console](https://github.com/apache/mynewt-core/tree/master/sys/console))),
-shell ([sys/shell](https://github.com/apache/mynewt-core/tree/master/sys/shell)))
-
-- mgmt: Contains the management libraries for newtmgr [mgmt/newtmgr](https://github.com/apache/mynewt-core/tree/master/sys/newtmgr)), which supports software upgrade and remote fetching of logs and statistics.
-
-- net: Contains the networking packages.  Highlights of the net directory are the NimBLE and IP packages.
-[Nimble](https://github.com/apache/mynewt-nimble)
-is a full Bluetooth host and controller implementation, that is written
-from the ground up for the Apache Mynewt Operating System (due to code moved to
-separate repo this folder contains only compatibility package files).
-[ip](https://github.com/apache/mynewt-core/tree/master/net/ip) is a port of LWIP, a complete IPv4 and IPv6 implementation.
-
-- hw: Contains the HW specific support packages.  Board Support Packages
-are located in [hw/bsp](https://github.com/apache/mynewt-core/tree/master/hw/bsp),
-and the MCU specific definitions they rely on are located in
-[hw/mcu](https://github.com/apache/mynewt-core/tree/master/hw/mcu).
-There is a HAL (Hardware Abstraction Layer) stored in
-[hw/hal](https://github.com/apache/mynewt-core/tree/master/hw/hal), even
-though the implementation of various HALs are stored in the MCU specific definitions.  Finally, drivers can be found in [hw/drivers](https://github.com/apache/mynewt-core/tree/master/hw/drivers).  Drivers provide a higher-level interface to the hardware than the HAL, and may require the Mynewt operating system to function.
-
-- fs: Contains the FS package ([fs/fs](https://github.com/apache/mynewt-core/tree/master/fs/fs))
-which is the high-level Apache Mynewt file system API.   A specific implementation of that FS, is
-[NFFS](https://github.com/apache/mynewt-core/tree/master/fs/nffs) (Newtron
-Flash File System.)  The Newtron file system is a FS that has been built from
-the ground-up in Apache Mynewt, designed to be optimized for small
-(64KB-32MB) flashes.
-The fs directory also contains [fcb](http://mynewt.apache.org/latest/os/modules/fcb/fcb/), a flash circular buffer implementation.
-
-## Sample Applications
-
-In addition to some of the core packages, there are also some sample
-applications that show how to instantiate the Apache Mynewt system.  These
-sample applications are located in the `apps/` directory.  They include:
-
-* [slinky](https://github.com/apache/mynewt-core/tree/master/apps/slinky): A
-  slightly more complex project that includes the console and shell libraries.
-* [bleuart](https://github.com/apache/mynewt-core/tree/master/apps/bleuart):
-Implements a simple BLE peripheral that supports the Nordic
-UART / Serial Port Emulation service
-(https://developer.nordicsemi.com/nRF5_SDK/nRF51_SDK_v8.x.x/doc/8.0.0/s110/html/a00072.html).
-
-# Getting Help
-
-If you are having trouble using or contributing to Apache Mynewt, or just want to talk
-to a human about what you're working on, you can contact us via the
-[developers mailing list](mailto:dev@mynewt.apache.org).
-
-Although not a formal channel, you can also find a number of core developers
-on the #mynewt channel on Freenode.
-
-Also, be sure to checkout the [Frequently Asked Questions](https://mynewt.apache.org/faq/answers)
-for some help troubleshooting first.
-
-# Contributing
-
-Anybody who works with Apache Mynewt can be a contributing member of the
-community that develops and deploys it.  The process of releasing an operating
-system for microcontrollers is never done: and we welcome your contributions
-to that effort.
-
-More information can be found at the Community section of the Apache Mynewt
-website, located [here](https://mynewt.apache.org/community).
-
-## Pull Requests
-
-Apache Mynewt welcomes pull request via Github.  Discussions are done on Github,
-but depending on the topic, can also be relayed to the official Apache Mynewt
-developer mailing list dev@mynewt.apache.org.
-
-If you are suggesting a new feature, please email the developer list directly,
-with a description of the feature you are planning to work on.
-
-We do not merge pull requests directly on Github, all PRs will be pulled and
-pushed through https://git.apache.org/.
-
-## Filing Bugs
-
-Bugs can be filed on the
-[Apache Mynewt Issues](https://github.com/apache/mynewt-core/issues).
-Please label the issue as a "Bug".
-
-Where possible, please include a self-contained reproduction case!
-
-## Feature Requests
-
-Feature requests should also be filed on the
-[Apache Mynewt Bug Tracker](https://github.com/apache/mynewt-core/issues).
-Please label the issue as a "Feature" or "Enhancement" depending on the scope.
-
-## Writing Tests
-
-We love getting newt tests!  Apache Mynewt is a huge undertaking, and improving
-code coverage is a win for every Apache Mynewt user.
-
-## Writing Documentation
-
-Contributing to documentation (in addition to writing tests), is a great way
-to get involved with the Apache Mynewt project.
-
-The Mynewt core OS documentation is found in [/docs](/docs).
-
-# License
-
-The code in this repository is all under either the Apache 2 license, or a
-license compatible with the Apache 2 license.  See the LICENSE file for more
-information.
-
-# Export restrictions
-
-This distribution includes cryptographic software. The country in which you
-currently reside may have restrictions on the import, possession, use, and/or
-re-export to another country, of encryption software. BEFORE using any encryption
-software, please check your country's laws, regulations and policies concerning
-the import, possession, or use, and re-export of encryption software, to see if
-this is permitted. See <http://www.wassenaar.org/> for more information.
-
-The U.S. Government Department of Commerce, Bureau of Industry and Security (BIS),
-has classified this software as Export Commodity Control Number (ECCN) 5D002.C.1,
-which includes information security software using or performing cryptographic
-functions with asymmetric algorithms. The form and manner of this Apache Software
-Foundation distribution makes it eligible for export under the License Exception ENC
-Technology Software Unrestricted (TSU) exception (see the BIS Export Administration
-Regulations, Section 740.13) for both object code and source code.
-
-The following provides more details on the included cryptographic software:
-https://tls.mbed.org/supported-ssl-ciphersuites.
+  <img src="https://github.com/apache/mynewt-core/actions/workflows/newt_test_all.yml/badge.svg" style="max-width: 100%;">
+</a>
+<p dir="auto">
+</p><p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Apache Mynewt 是一个适用于微型嵌入式设备的开源操作系统。其目标是简化针对功耗和成本为驱动因素的微控制器环境的应用程序开发。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">目前支持以下硬件平台：</font></font></p>
+<ul dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nordic Semiconductor 的 nRF52 DK (Cortex-M4)</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">RuuviTag 传感器信标平台（基于 Nordic nRF52832）</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nordic Semiconductor 的 nRF51 DK (Cortex-M0)</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">来自 VNG IoT 实验室的 VBLUno51（基于 Nordic nRF51822 SoC）</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">来自 VNG IoT 实验室的 VBLUno52（基于 Nordic nRF52832 SoC，Cortex-M4）</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">RedBear 的 BLE Nano（基于 Nordic nRF51822 SoC）</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">RedBear 的 BLE Nano2 和 Blend2（基于 Nordic nRF52832 SoC）</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Rigado 的 BMD-300-EVAL-ES (Cortex-M4)</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Rigado 的 BMD-200 (Cortex-M0)</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Adafruit 羽毛 nRF52 Pro</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ST Micro 的 STM32F4DISCOVERY (Cortex-M4)</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Olimex 的 STM32-E407 (Cortex-M4)</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Arduino 零 (Cortex-M0)</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Arduino Zero Pro (Cortex-M0)</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Arduino M0 Pro (Cortex-M0)</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Arduino MKR1000 (Cortex-M0)</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Arduino Primo NRF52 (Cortex-M4)</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">NUCLEO-F401RE（皮质-M4）</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">NUCLEO-F767ZI（皮质-M7）</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">STM32F7 系列 (Cortex-M7) 探索套件</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">NXP 的 FRDM-K64F (Cortex-M4)</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">BBC micro:bit（北欧 nrf51822；Cortex-M0）</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">SiFive HiFive1（RISC-V指令集架构）</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">u-blox 的 NINA-B1 BLE 模块 (Cortex-M4)</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">MikroElectronika 的 6LoWPAN 应答器（PIC32MX470 微控制器）</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">chipKIT Wi-FIRE（PIC32MZ 微控制器）</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Creator Ci40模块（双MIPS interAptiv CPU）</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">EE-02 板，配备 Telenor 的 Semtech Sx1276 芯片 (Cortex-M4)</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Dialog Semiconductor 的 DA1469x Pro DK (Cortex-M33)</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nordic Semiconductor 的 nRF5340 DK (Cortex-M33)</font></font></li>
+</ul>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Apache Mynewt 使用
+</font></font><a href="https://www.github.com/apache/mynewt-newt"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Newt</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">构建和包管理系统，它允许您构建操作系统并仅选择您需要的组件。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">该存储库包含 Apache Mynewt 操作系统的核心包，包括：</font></font></p>
+<ul dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">抢占式实时操作系统内核</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">开源蓝牙 5.0 堆栈（主机和控制器）NimBLE，完全取代 Nordic 芯片组上的专有 SoftDevice。
+</font></font><span><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">注意</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">NimBLE 源已移至单独的</font></font><a href="https://github.com/apache/mynewt-nimble"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">存储库</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font></font></span>
+<ul dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">支持 251 字节数据包大小</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">同时支持所有 4 个角色 - 广播者、观察者、外设和中央</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">支持最多 32 个同时连接。</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">传统和 SC（安全连接）SMP 支持（配对和绑定）。</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">广告扩展。</font></font></li>
+</ul>
+</li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">闪存文件系统 NFFS，专为小型 (128KB-&gt;16MB) 闪存而设计。</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">脂肪文件系统</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">闪存循环缓冲区</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">JSON 和 CBOR 编码</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">引导加载程序支持</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">远程软件升级</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">HAL 和 BSP 基础设施旨在抽象微控制器细节</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Shell 和控制台支持</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">统计和记录基础设施</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">OIC 客户端和服务器</font></font></li>
+</ul>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">有关 Mynewt 操作系统的更多信息，请访问我们的</font></font><a href="https://mynewt.apache.org/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">网站</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。如果您想开始使用，请访问</font></font><a href="http://mynewt.apache.org/quick-start/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">快速入门指南</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font></font></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">浏览</font></font></h2><a id="user-content-browsing" class="anchor" aria-label="固定链接：浏览" href="#browsing"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">如果您正在浏览源代码树，并且想要查看一些主要的功能块，这里有一些提示：</font></font></p>
+<ul dir="auto">
+<li>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">kernel：包含 RTOS 的核心 ( </font></font><a href="https://github.com/apache/mynewt-core/tree/master/kernel/os"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">kernel/os</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> )</font></font></p>
+</li>
+<li>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">sys：包含许多用于构建应用程序的帮助程序库。包括控制台( </font></font><a href="https://github.com/apache/mynewt-core/tree/master/sys/console"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">sys/console</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> ))、外壳( </font></font><a href="https://github.com/apache/mynewt-core/tree/master/sys/shell"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">sys/shell</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> ))</font></font></p>
+</li>
+<li>
+<p dir="auto"><font style="vertical-align: inherit;"></font><a href="https://github.com/apache/mynewt-core/tree/master/sys/newtmgr"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">mgmt：包含newtmgr mgmt/newtmgr</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> ）的管理库</font><font style="vertical-align: inherit;">，支持软件升级以及远程获取日志和统计信息。</font></font></p>
+</li>
+<li>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">net：包含网络包。 net 目录的亮点是 NimBLE 和 IP 包。
+ </font></font><a href="https://github.com/apache/mynewt-nimble"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nimble</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+是一个完整的蓝牙主机和控制器实现，是为 Apache Mynewt 操作系统从头开始编写的（由于代码移至单独的存储库，此文件夹仅包含兼容性包文件）。
+ </font></font><a href="https://github.com/apache/mynewt-core/tree/master/net/ip"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ip</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">是 LWIP 的一个端口，是完整的 IPv4 和 IPv6 实现。</font></font></p>
+</li>
+<li>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">hw：包含特定于硬件的支持包。板级支持包位于</font></font><a href="https://github.com/apache/mynewt-core/tree/master/hw/bsp"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">hw/bsp</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">中，它们所依赖的 MCU 特定定义位于
+</font></font><a href="https://github.com/apache/mynewt-core/tree/master/hw/mcu"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">hw/mcu</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">中。</font><font style="vertical-align: inherit;">尽管各种 HAL 的实现存储在 MCU 特定定义中，但</font></font><a href="https://github.com/apache/mynewt-core/tree/master/hw/hal"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">hw/hal</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">中存储了一个 HAL（硬件抽象层）
+ 。最后，可以在</font></font><a href="https://github.com/apache/mynewt-core/tree/master/hw/drivers"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">hw/drivers</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">中找到驱动程序</font><font style="vertical-align: inherit;">。驱动程序为硬件提供比 HAL 更高级别的接口，并且可能需要 Mynewt 操作系统才能运行。</font></font></p>
+</li>
+<li>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">fs：包含 FS 包 ( </font></font><a href="https://github.com/apache/mynewt-core/tree/master/fs/fs"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">fs/fs</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> )，它是高级 Apache Mynewt 文件系统 API。该 FS 的具体实现是
+</font></font><a href="https://github.com/apache/mynewt-core/tree/master/fs/nffs"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">NFFS</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">（Newtron 闪存文件系统）。Newtron 文件系统是在 Apache Mynewt 中从头开始构建的 FS，旨在针对小型 (64KB-32MB) 闪存进行优化。 fs 目录还包含</font></font><a href="http://mynewt.apache.org/latest/os/modules/fcb/fcb/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">fcb</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">，一个闪存循环缓冲区实现。</font></font></p>
+</li>
+</ul>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">示例应用程序</font></font></h2><a id="user-content-sample-applications" class="anchor" aria-label="永久链接：示例应用程序" href="#sample-applications"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">除了一些核心包之外，还有一些示例应用程序展示了如何实例化 Apache Mynewt 系统。这些示例应用程序位于该</font></font><code>apps/</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">目录中。他们包括：</font></font></p>
+<ul dir="auto">
+<li><a href="https://github.com/apache/mynewt-core/tree/master/apps/slinky"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">slinky</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">：一个稍微复杂的项目，包括控制台和 shell 库。</font></font></li>
+<li><a href="https://github.com/apache/mynewt-core/tree/master/apps/bleuart"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">bleuart</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">：实现一个简单的 BLE 外设，支持 Nordic UART / 串行端口仿真服务 ( </font></font><a href="https://developer.nordicsemi.com/nRF5_SDK/nRF51_SDK_v8.x.x/doc/8.0.0/s110/html/a00072.html" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">https://developer.nordicsemi.com/nRF5_SDK/nRF51_SDK_v8.xx/doc/8.0.0/s110/html/a00072.html</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> )。</font></font></li>
+</ul>
+<div class="markdown-heading" dir="auto"><h1 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">寻求帮助</font></font></h1><a id="user-content-getting-help" class="anchor" aria-label="永久链接：获取帮助" href="#getting-help"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">如果您在使用 Apache Mynewt 或为 Apache Mynewt 做出贡献时遇到问题，或者只是想与人讨论您正在从事的工作，您可以通过
+</font></font><a href="mailto:dev@mynewt.apache.org"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">开发人员邮件列表</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">与我们联系。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">虽然不是正式频道，但您也可以在 Freenode 上的#mynewt 频道上找到一些核心开发人员。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">另外，请务必先查看</font></font><a href="https://mynewt.apache.org/faq/answers" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">常见问题解答</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+，以获取一些故障排除帮助。</font></font></p>
+<div class="markdown-heading" dir="auto"><h1 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">贡献</font></font></h1><a id="user-content-contributing" class="anchor" aria-label="永久链接：贡献" href="#contributing"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">任何使用 Apache Mynewt 的人都可以成为开发和部署它的社区的贡献成员。发布微控制器操作系统的过程从未结束：我们欢迎您为此做出贡献。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">更多信息可以在 Apache Mynewt 网站的社区部分找到，位于</font></font><a href="https://mynewt.apache.org/community" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">此处</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font></font></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">请求请求</font></font></h2><a id="user-content-pull-requests" class="anchor" aria-label="永久链接：拉取请求" href="#pull-requests"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Apache Mynewt 欢迎通过 Github 发起拉取请求。讨论在 Github 上进行，但根据主题，也可以转发到官方 Apache Mynewt 开发人员邮件列表</font></font><a href="mailto:dev@mynewt.apache.org"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">dev@mynewt.apache.org</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">如果您建议新功能，请直接向开发人员列表发送电子邮件，并附上您计划开发的功能的描述。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">我们不会直接在 Github 上合并拉取请求，所有 PR 都将通过</font></font><a href="https://git.apache.org/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">https://git.apache.org/</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">拉取和推送。</font></font></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">提交错误</font></font></h2><a id="user-content-filing-bugs" class="anchor" aria-label="永久链接：提交错误" href="#filing-bugs"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">可以在
+</font></font><a href="https://github.com/apache/mynewt-core/issues"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Apache Mynewt Issues</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">上提交错误。请将问题标记为“Bug”。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">如果可能，请附上一个独立的复制盒！</font></font></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">功能请求</font></font></h2><a id="user-content-feature-requests" class="anchor" aria-label="永久链接：功能请求" href="#feature-requests"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">功能请求还应在
+</font></font><a href="https://github.com/apache/mynewt-core/issues"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Apache Mynewt Bug Tracker</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">上提交。请根据范围将问题标记为“功能”或“增强”。</font></font></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">编写测试</font></font></h2><a id="user-content-writing-tests" class="anchor" aria-label="永久链接：编写测试" href="#writing-tests"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">我们喜欢进行蝾螈测试！ Apache Mynewt 是一项艰巨的任务，提高代码覆盖率对于每个 Apache Mynewt 用户来说都是一场胜利。</font></font></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">编写文档</font></font></h2><a id="user-content-writing-documentation" class="anchor" aria-label="永久链接：编写文档" href="#writing-documentation"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">贡献文档（除了编写测试之外）是参与 Apache Mynewt 项目的好方法。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Mynewt 核心操作系统文档位于</font></font><a href="/apache/mynewt-core/blob/master/docs"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">/docs</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">中。</font></font></p>
+<div class="markdown-heading" dir="auto"><h1 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">执照</font></font></h1><a id="user-content-license" class="anchor" aria-label="永久链接：许可证" href="#license"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">此存储库中的代码全部采用 Apache 2 许可证或与 Apache 2 许可证兼容的许可证。有关详细信息，请参阅许可证文件。</font></font></p>
+<div class="markdown-heading" dir="auto"><h1 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">出口限制</font></font></h1><a id="user-content-export-restrictions" class="anchor" aria-label="永久链接：出口限制" href="#export-restrictions"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">该发行版包括加密软件。您当前居住的国家/地区可能对加密软件的进口、拥有、使用和/或再出口到另一个国家/地区有限制。在使用任何加密软件之前，请检查您所在国家/地区有关进口、拥有或使用以及再出口加密软件的法律、法规和政策，以了解是否允许这样做。请参阅</font></font><a href="http://www.wassenaar.org/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">http://www.wassenaar.org/</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">了解更多信息。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">美国政府商务部工业与安全局 (BIS) 已将此软件分类为出口商品控制编号 (ECCN) 5D002.C.1，其中包括使用非对称算法或执行加密功能的信息安全软件。此 Apache Software Foundation 发行版的形式和方式使其符合目标代码和源代码的许可例外 ENC 技术软件无限制 (TSU) 例外（请参阅 BIS 出口管理条例第 740.13 节）的出口资格。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">以下提供了有关随附加密软件的更多详细信息：
+ </font></font><a href="https://tls.mbed.org/supported-ssl-ciphersuites" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">https://tls.mbed.org/supported-ssl-ciphersuites</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font></font></p>
+</article></div>
